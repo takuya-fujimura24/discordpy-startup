@@ -1,6 +1,7 @@
 from discord.ext import commands
 import os
 import traceback
+import datetime
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -21,4 +22,8 @@ async def ping(ctx):
 async def hello(ctx):
     await ctx.send('おはようございます! 優木せつ菜です‼')
 
+@bot.command()
+now = datetime.datetime.now()
+print(now)
+    
 bot.run(token)
